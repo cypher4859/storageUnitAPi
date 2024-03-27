@@ -1,0 +1,6 @@
+@storageUnitAPi_HostAddress = http://localhost:5042
+
+GET {{storageUnitAPi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

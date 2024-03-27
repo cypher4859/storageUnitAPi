@@ -1,0 +1,18 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+  db:
+    # mssql server image isn't available for arm64 architecture, so we use azure-sql instead
+    ports:
+      - 1433:1433
+      - 4022:4022
+      - 135:135
+      - 1434:1434
+    image: mcr.microsoft.com/azure-sql-edge:1.0.4
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: example_123
+    restart: always
+    # If you really want to use MS SQL Server, uncomment the following line
+    #image: mcr.microsoft.com/mssql/server
